@@ -14,7 +14,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 |           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
 ```
 
-Repo: [https://ucsb-cs156-s24/STARTER-team01](https://github.com/ucsb-cs156-s24/team01-s24-4pm-8)
+Repo: [https://github.com/ucsb-cs156-s24/team01-s24-4pm-8](https://github.com/ucsb-cs156-s24/team01-s24-4pm-8)
 
 * TODO: Correct the links to app on Dokku below,
   then delete this TODO.  Replace it with
