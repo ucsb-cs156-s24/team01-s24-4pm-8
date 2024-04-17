@@ -9,7 +9,7 @@ Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 |-----------|-----------|-----------------------------|---------------------------|
 |           |           | `LocationQueryService`      | `LocationController`      |
 |           |           | `PublicHolidayQueryService` | `PublicHolidayController` |
-| Jeffrey M | Jumshim | `TidesQueryService`         | `TidesController`         |
+| Jeffrey M | Jumshim   | `TidesQueryService`         | `TidesController`         |
 |           |           | `UniversityQueryService`    | `UniversityController`    |
 |           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
 ```
