@@ -22,6 +22,7 @@ import org.springframework.web.client.HttpClientErrorException;
 @Service
 public class ZipCodeQueryService {
 
+    ObjectMapper mapper = new ObjectMapper();
     private final RestTemplate restTemplate;
 
     public ZipCodeQueryService(RestTemplateBuilder restTemplateBuilder) {
@@ -37,10 +38,9 @@ public class ZipCodeQueryService {
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<>(headers);
+        HttpEntity<String> entity = new HttpEntity<>("body", headers);
 
-        //String ucsbLat = "34.4140"; // hard coded params for Storke Tower
-        //String ucsbLong = "-119.8489";
+        
         Map<String, String> uriVariables = Map.of("zipcode", zipcode);
 
         ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,
