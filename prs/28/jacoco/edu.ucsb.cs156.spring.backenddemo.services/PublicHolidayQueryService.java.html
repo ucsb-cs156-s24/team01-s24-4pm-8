@@ -33,19 +33,19 @@ public class PublicHolidayQueryService {
     public static final String ENDPOINT = &quot;https://date.nager.at/api/v2/publicholidays/{year}/{countryCode}&quot;;
 
     public String getJSON(String year, String countryCode) throws HttpClientErrorException {
-<span class="nc" id="L36">        log.info(&quot;year={}, countryCode={}&quot;, year, countryCode);</span>
-<span class="nc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="nc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="nc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L36">        log.info(&quot;year={}, countryCode={}&quot;, year, countryCode);</span>
+<span class="fc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="nc" id="L41">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;year&quot;, year, &quot;countryCode&quot;, countryCode);</span>
+<span class="fc" id="L41">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;year&quot;, year, &quot;countryCode&quot;, countryCode);</span>
 
-<span class="nc" id="L43">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+<span class="fc" id="L43">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
 
-<span class="nc" id="L45">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
+<span class="fc" id="L45">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
                 uriVariables);
 
-<span class="nc" id="L48">        return re.getBody();</span>
+<span class="fc" id="L48">        return re.getBody();</span>
     }
 
    
