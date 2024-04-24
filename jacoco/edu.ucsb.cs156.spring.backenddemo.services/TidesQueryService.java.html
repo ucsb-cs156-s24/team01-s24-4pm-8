@@ -3,8 +3,6 @@
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
@@ -19,31 +17,31 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-<span class="fc" id="L22">@Slf4j</span>
+<span class="fc" id="L20">@Slf4j</span>
 @Service
 public class TidesQueryService {
 
 
     private final RestTemplate restTemplate;
 
-<span class="fc" id="L29">    public TidesQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
-<span class="fc" id="L30">        restTemplate = restTemplateBuilder.build();</span>
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L27">    public TidesQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
+<span class="fc" id="L28">        restTemplate = restTemplateBuilder.build();</span>
+<span class="fc" id="L29">    }</span>
 
     // Documentation for endpoint is at: https://api.tidesandcurrents.noaa.gov/api/prod/
     public static final String ENDPOINT = &quot;https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?application=ucsb-cs156&amp;begin_date={beginDate}&amp;end_date={endDate}&amp;station={station}&amp;product=predictions&amp;datum=mllw&amp;units=english&amp;time_zone=lst_ldt&amp;interval=hilo&amp;format=json&quot;;
 
     public String getJSON(String beginDate, String endDate, String station) throws HttpClientErrorException {
-<span class="fc" id="L37">        log.info(&quot;beginDate={}, endDate={}, station={}&quot;, beginDate, endDate, station);</span>
-<span class="fc" id="L38">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L39">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L40">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L35">        log.info(&quot;beginDate={}, endDate={}, station={}&quot;, beginDate, endDate, station);</span>
+<span class="fc" id="L36">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L37">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L38">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L42">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;beginDate&quot;, beginDate, &quot;endDate&quot;, endDate, &quot;station&quot;, station);</span>
-<span class="fc" id="L43">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+<span class="fc" id="L40">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;beginDate&quot;, beginDate, &quot;endDate&quot;, endDate, &quot;station&quot;, station);</span>
+<span class="fc" id="L41">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
 
-<span class="fc" id="L45">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);</span>
-<span class="fc" id="L46">        return re.getBody();</span>
+<span class="fc" id="L43">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);</span>
+<span class="fc" id="L44">        return re.getBody();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
