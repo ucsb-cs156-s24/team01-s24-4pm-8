@@ -3,8 +3,6 @@ package edu.ucsb.cs156.spring.backenddemo.services;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
