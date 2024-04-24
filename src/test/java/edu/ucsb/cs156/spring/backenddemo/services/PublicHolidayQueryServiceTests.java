@@ -42,4 +42,4 @@ public class PublicHolidayQueryServiceTests {
         String actualResult = PublicHolidayQueryService.getJSON(year, countryCode);
         assertEquals(fakeJsonResult, actualResult);
     }
-}
+} 
