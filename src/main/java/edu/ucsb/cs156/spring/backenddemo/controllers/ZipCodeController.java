@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name="Getting Zipcodes")
+@Tag(name="Zip Code Information from http://www.zippopotam.us/")
 @Slf4j
 @RestController
 @RequestMapping("/api/zipcode")
